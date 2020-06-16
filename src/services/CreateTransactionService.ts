@@ -17,6 +17,8 @@ class CreateTransactionService {
   public execute({ title, value, type }: Request): Transaction {
     const { total } = this.transactionsRepository.getBalance();
 
+    // const addLeaves = leaves;
+
     if (!['income', 'outcome'].includes(type)) {
       throw new Error('This type not permission');
     }
